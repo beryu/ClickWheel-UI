@@ -44,8 +44,8 @@ var clickWheel = {};
         diffX = curX - lX;
         diffY = curY - lY;
 
-        // play of finger move is 10px
-        if(Math.abs(diffX) + Math.abs(diffY) < 10) { return; }
+        // play of finger move is 20px
+        if(Math.abs(diffX) + Math.abs(diffY) < 20) { return; }
 
         if(curY < WHEEL_BODY_RADIUS) {
             multiX = 1;
@@ -57,8 +57,8 @@ var clickWheel = {};
         } else {
             multiY = 1;
         }
-        effectLevel += (multiX * Math.integer(diffX / 5));
-        effectLevel += (multiY * Math.integer(diffY / 5));
+        effectLevel += (multiX * Math.integer(diffX / 10));
+        effectLevel += (multiY * Math.integer(diffY / 10));
         effectLevel = effectLevel > 0 ? 1 : -1;
 
 1        // set list index

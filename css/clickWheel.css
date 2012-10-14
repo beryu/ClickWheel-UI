@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Helvetica;
 }
 
 html, body{
@@ -83,7 +84,7 @@ body {
     }
     .wheel-menu{
         top: 4px;
-        left: 107px;
+        left: 110px;
     }
     .wheel-next{
         top: 125px;
