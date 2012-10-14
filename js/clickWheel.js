@@ -17,8 +17,8 @@ var clickWheel = {};
             currentY;
 
         // get current coordinates
-        currentX = event.touches[0].pageX - offsetLeft;
-        currentY = event.touches[0].pageY - offsetTop;
+        currentX = event.pageX - offsetLeft;
+        currentY = event.pageY - offsetTop;
 
         // if last coordinates is undefined, quit function.
         if(!lastX) {
@@ -57,8 +57,8 @@ var clickWheel = {};
         } else {
             multiY = 1;
         }
-        effectLevel += (multiX * Math.integer(diffX / 10));
-        effectLevel += (multiY * Math.integer(diffY / 10));
+        effectLevel += (multiX * diffX);
+        effectLevel += (multiY * diffY);
         effectLevel = effectLevel > 0 ? 1 : -1;
 
         // set list index
@@ -73,7 +73,6 @@ var clickWheel = {};
         // private variables
         var container,
             lists,
-            currentIndex = 0,
             i,
             scrollYPos;
 
@@ -102,7 +101,7 @@ var clickWheel = {};
         }
     };
 
-    var clearXY = function(event) {
+    var clearXY = function() {
         lastX = undefined;
         lastY = undefined;
     };
@@ -129,7 +128,7 @@ var clickWheel = {};
         wheelBodyElem.addEventListener('touchmove', getXY, false);
         wheelBodyElem.addEventListener('touchend', clearXY, false);
 
-        // event will be canceled when pushing OK button
+        // event will be canceled when touching OK button
         okButtonElem.addEventListener('touchstart', cancel, false);
         okButtonElem.addEventListener('touchmove', cancel, false);
     };
