@@ -14,7 +14,7 @@ var clickWheel = {};
 
     var getXY = function(event) {
         var currentX,
-            currentY,
+            currentY;
 
         // get current coordinates
         currentX = event.touches[0].pageX - offsetLeft;
@@ -61,7 +61,7 @@ var clickWheel = {};
         effectLevel += (multiY * Math.integer(diffY / 10));
         effectLevel = effectLevel > 0 ? 1 : -1;
 
-1        // set list index
+        // set list index
         addListIndex(effectLevel);
 
         // save coordinates
