@@ -108,6 +108,7 @@ var clickWheel = {};
 
     var cancel = function(event) {
         event.preventDefault();
+        event.stopPropagation();
     };
 
     var setElements = function(wheelElem, screenElem) {
